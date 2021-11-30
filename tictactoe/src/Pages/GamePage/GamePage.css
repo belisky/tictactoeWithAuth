@@ -5,6 +5,12 @@
    
    
 }
+.header {
+    height:10vh;
+  
+    position:relative;
+
+}
  
 
 .Board {
@@ -15,8 +21,99 @@
     justify-self: center;
     border:1px solid black;
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 100px);
  
     grid-auto-flow: row;
+}
+
+.game-board {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    width:100vw;
+    height:80vh;
+}
+ 
+.options__menu {
+     display: none;
+     list-style: none;
+     border:1px solid #a3a3a3;
+     box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+    
+
+}
+.options__list {
+    display:flex;
+  
+    width:100%;
+    cursor:pointer;
+    padding:1em 3em;
+
+}
+.options__menu > * + *{
+    border-top: 1px solid rgb(197, 192, 192);
+    
+   
+}
+.options--toggle {
+    display:none;
+}
+
+
+.options--toggle:checked ~ .options__menu{
+    display: block;
+    top:100%;
+    right:4em;
+    position:absolute;
+ 
+
+}
+.options--toggle--label {
+    position:absolute;
+    z-index:999;
+    top:0;
+    right:4em;
+    margin-right:1em;
+    padding:2em; 
+    display:flex;
+    height:100%;
+    align-items:center;
+    
+}
+.options--toggle--label span,
+.options--toggle--label span::after,
+.options--toggle--label span::before {
+    display:block;
+    background: black;
+    width:5px;
+    height:5px;    
+    border-radius: 50%;
+    
+}
+.options--toggle--label span::after,
+.options--toggle--label span::before {
+  content:'';
+  position:absolute;
+}
+
+.options--toggle--label span::after {
+    top:6vh;
+
+}
+.options--toggle--label span::before {
+    bottom:6vh;
+}
+
+.timer {
+    width:100%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    position:absolute;
+    margin:0 auto;
+    border:1px solid green;
+    text-align: center;
+    padding:1.5em 3em;
 }
 

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Tile from '../../Components/Tile/Tile'
 import './GamePage.css'
 import { Patterns } from '../../Components/Patterns/Patterns'
@@ -7,11 +7,12 @@ import { Patterns } from '../../Components/Patterns/Patterns'
 const GamePage = () => {
     const [board,setBoard]=useState(["","","","","","","","",""]);
     const [player,setPlayer]=useState("O");
-    const [result,setResult]=useState({winner:"none",state:"won"})
+    const [result,setResult]=useState({winner:"none",state:"none"})
 
    
     useEffect(()=>{
         checkWin();
+        checkIfTie();
         if (player==="X"){
             setPlayer("O");
         }
@@ -19,12 +20,17 @@ const GamePage = () => {
             setPlayer("X");
         }
         },[board]);
+
     useEffect(()=>{
+       
         if (result.state!=="none"){
             alert(`Game Over! Winner is: ${result.winner}`);
+            restartGame(); 
         }
        
-    },[result])
+
+       
+    },[result]);
 
 
     const chooseTile = (tile) => {
@@ -41,7 +47,7 @@ const GamePage = () => {
         Patterns.forEach((currPattern)=>{
             const firstPlayer=board[currPattern[0]];
             if (firstPlayer==="")return;
-            let foundWinner=true
+            let foundWinner=true; 
             currPattern.forEach((idx)=>{
                 if(board[idx]!== firstPlayer) {
                     foundWinner=false
@@ -53,7 +59,7 @@ const GamePage = () => {
         })
     }
     
-    const checkIfTile =()=> {
+    const checkIfTie =()=> {
         let filled = true;
         board.forEach((tile)=> {
             if (tile===""){
@@ -64,6 +70,11 @@ const GamePage = () => {
             setResult({winner:"No One",state:"Tie"})
         }
 
+    }
+
+    const restartGame = ()=>{
+        setBoard(["","","","","","","","",""]);
+        setPlayer("O");
     }
 
     const card=()=> {
@@ -77,11 +88,28 @@ const GamePage = () => {
        
     }
     return (
-        <div className="Board">
-           {
-               card()
-           }
-            
+        <div  >
+             <div className="header">
+                 <input className="options--toggle" type="checkbox" id="options--toggle" />           
+                <ul className="options__menu">
+                <li className="options__list">Quit</li>
+                <li className="options__list" >Restart</li>
+                </ul>
+                <label className="options--toggle--label" htmlFor="options--toggle">
+                    <span ></span>
+                </label>
+                <div className="timer">
+                    <p>00:01</p>
+                </div>
+             </div>
+            <div className="game-board">
+            <div className="Board">
+            {
+                card()
+            }
+                
+            </div>
+            </div>
         </div>
     )
 }
