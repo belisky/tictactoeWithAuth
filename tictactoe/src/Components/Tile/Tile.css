@@ -1,0 +1,7 @@
+.tile {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    border:1px rgb(32, 32, 70) solid;
+}
