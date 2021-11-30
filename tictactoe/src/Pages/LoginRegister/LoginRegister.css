@@ -1,0 +1,95 @@
+.register-page {
+    height:100vh;
+    display:flex;
+    align-items:center; 
+    justify-content: center;
+    width:100vw;
+}
+
+.card {
+    display:flex;
+    position:relative;    
+    height:400px;
+    width:300px;
+    flex-direction: column;
+    border:1px solid rgb(182, 182, 182);
+    box-shadow:0 1px 2px rgb(182, 182, 182);
+}
+
+.headings {
+    display:flex;
+ 
+    flex-direction: row;
+    position:relative;
+    z-index:999;
+     }
+ 
+
+.heading__item {
+    width:100%;
+    margin:0;
+    text-align: center;
+    padding:1em 2em;
+    border:1px solid black;
+    cursor:pointer;
+
+}
+
+.forms,.register-forms {
+    display:flex;
+    flex-direction: column;
+    padding:.5em 1em;
+    align-items:center;
+    justify-content: center;
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    border:1px solid blue;
+ 
+}
+.register-forms {
+    border:1px solid green;
+    display:none;
+     
+}
+.form__heading {
+    font-weight:600;
+    font-size:1.5em;
+    margin-top:0;
+}
+.forms>*,.register-forms>* {
+    margin-bottom:1em;
+
+}
+.labels {
+    width:100%;
+    margin-right:auto;
+}
+.inputs {
+    border:none;
+    border-bottom:1px solid sandybrown;
+    width:95%;
+    padding:.5em; 
+  
+}
+.submit-btn {
+    margin-top:1em;
+    padding:.5em ;
+    width:100%;
+    
+}
+.toggle-login:checked~.forms  {
+    display:none;
+
+}
+.toggle-login:checked ~ .forms~.register-forms{
+    display:flex;
+
+}
+.toggle-login{
+    display:none;
+}
+ 
+

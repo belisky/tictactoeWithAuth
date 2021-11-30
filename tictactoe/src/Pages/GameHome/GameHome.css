@@ -9,7 +9,7 @@
     height:10vh;
     display:flex; 
     position:relative;  
-   background:sandybrown;
+   background:#f86807d8;
     margin-top: 1em;
     border:1px solid black;
     box-shadow: 0 1px 2px rgb(201, 201, 201);
@@ -28,6 +28,7 @@
     border:1px solid blue;
     padding:1em 2em;
     text-align: center;
+    color:#523c77;
 }
 
  
@@ -49,6 +50,7 @@
     padding:1.5em 3em;
     border:1px solid rgb(170, 169, 169);
     animation:example 1s linear 1s infinite alternate;
+     
     
 }
 .fun__item--small
