@@ -53,6 +53,19 @@ const GamePage = () => {
         })
     }
     
+    const checkIfTile =()=> {
+        let filled = true;
+        board.forEach((tile)=> {
+            if (tile===""){
+                filled=false;
+            }
+        })
+        if(filled ) {
+            setResult({winner:"No One",state:"Tie"})
+        }
+
+    }
+
     const card=()=> {
         let tiles=[]
         
