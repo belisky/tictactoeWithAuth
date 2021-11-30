@@ -1,0 +1,112 @@
+.main {
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+}
+
+.Nav {
+    width:100%;
+    height:10vh;
+    display:flex; 
+    position:relative;  
+   background:sandybrown;
+    margin-top: 1em;
+    border:1px solid black;
+    box-shadow: 0 1px 2px rgb(201, 201, 201);
+}
+
+.Nav__list {
+    list-style: none;
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-between;
+    padding:0 5em;
+}
+.Nav__item {
+    border:1px solid blue;
+    padding:1em 2em;
+    text-align: center;
+}
+
+ 
+
+.fun {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+    margin-top: 2em;
+    
+}
+
+ 
+.fun__item--medium
+  {
+    text-align: center;
+    padding:1.5em 3em;
+    border:1px solid rgb(170, 169, 169);
+    animation:example 1s linear 1s infinite alternate;
+    
+}
+.fun__item--small
+  {
+    text-align: center;
+    padding:1em 2em;
+    border:1px solid rgb(170, 169, 169);
+    animation:example 1s linear 1.2s infinite alternate;
+    
+}
+.fun__item--large
+  {
+    text-align: center;
+    padding:2em 3.5em;
+    border:1px solid rgb(170, 169, 169);
+    animation:example 1s linear 1.1s infinite alternate;
+    
+}
+.fun>*+* {
+    margin-top:2em;
+}
+ @keyframes example {
+     0%{transform: rotateZ(30deg);
+    background-color:#845ec2;}
+     30%{transform:translateX(50px);
+    background-color:#be93fd;}
+     100%{transform:rotateZ(-30deg);
+    background-color:#faccff;}
+ }
+
+ .player {
+     width:150px;
+     display:none;
+     flex-direction: column;
+     margin-top:1em;
+     margin-left:auto;
+     position:absolute;
+     top:12vh;
+     right:1em;
+     border:1px solid rgb(255, 183, 251);
+ }
+  .player > * {
+      margin:.5em;
+  }
+
+  .leader-board {
+      border:1px solid rgb(151, 229, 151);
+      position:absolute;
+      top:12vh;
+      margin-top: 1em;
+      padding:0 1em;
+      display:none;
+  }
+  .leader-board__title {
+      border-bottom: 1px solid rgb(199, 198, 198);
+  }
+  .leader-board>* {
+      margin:.5em;
+  }
+  
+ 
