@@ -1,13 +1,18 @@
 import React from 'react'
 import './GameHome.css'
+import { useNavigate } from 'react-router'
 
 const GameHome = () => {
+    const navigate=useNavigate();
+    const play=()=>{
+        navigate("/gamepage/")
+    }
     return (
         <div className="main">
             <nav className="Nav">
                  <ul className="Nav__list">
                       <label  className="Nav__item--leader Nav__item">LeaderBoard</label>
-                      <label className="Nav__item--play Nav__item">Play</label>
+                      <label onClick={play} className="Nav__item--play Nav__item">Play</label>
                  </ul>
             </nav>
             <div className="leader-board">

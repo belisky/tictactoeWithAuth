@@ -12,8 +12,9 @@ const GamePageLogic = () => {
 
    
     useEffect(()=>{
-        checkWin();
         checkIfTie();
+        checkWin();
+        
         
         if (player==="X"){
             setPlayer("O");
@@ -57,6 +58,8 @@ const GamePageLogic = () => {
             })
             if (foundWinner){
                 setResult({winner:player,state:"won"});
+            }else {
+                return
             }
         })
     }
@@ -69,6 +72,7 @@ const GamePageLogic = () => {
             }
         })
         if(filled ) {
+            
             setResult({winner:"No One",state:"Tie"})
         }
 
@@ -90,7 +94,7 @@ const GamePageLogic = () => {
        
     } 
 
-    return {card}
+    return {card,setBoard,setPlayer}
 }
 
 export default GamePageLogic

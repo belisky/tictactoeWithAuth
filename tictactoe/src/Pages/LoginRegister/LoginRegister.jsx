@@ -1,15 +1,9 @@
 import './LoginRegister.css'
-import React,{useState} from 'react'
-
+import React  from 'react'
+import LoginRegisterLogic from './LoginRegisterLogic'
 const LoginRegister = () => {
-    const [toggle,setToggle]=useState(true)
-
-    const toggleForms=()=> {
-        setToggle(false);
-    }
-    const toggleRForms=()=> {
-        setToggle(true);
-    }
+    const {register,login,toggleForms,toggleRForms,toggle}=LoginRegisterLogic();
+   
      
 
     return (
@@ -27,7 +21,7 @@ const LoginRegister = () => {
                     <input type="text" className="inputs" placeholder="Name"/>
                      
                     <input type="password" className="inputs" placeholder="Password"/>
-                    <button className="submit-btn">Login</button>
+                    <button onClick={login} className="submit-btn">Login</button>
                     <p className="no-padding">Forgot password? reset here!</p>
                     <p className="no-padding">New here, Register instead!!</p>
                 </div>
@@ -36,7 +30,7 @@ const LoginRegister = () => {
                     <input type="text" className="inputs" placeholder="Name"/>
                      
                     <input type="password" className="inputs" placeholder="Password"/>
-                    <button className="submit-btn">Sign Up</button>
+                    <button onClick={register} className="submit-btn">Sign Up</button>
                     <p className="no-padding">Already have an account? Login</p>
                    
                 </div>
