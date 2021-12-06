@@ -21,8 +21,11 @@
     display:flex;
     flex-direction: row;
     align-items:center;
-    justify-content: space-between;
+    justify-content: space-around;
     padding:0 5em;
+}
+.Nav__list >*+* {
+    margin-left: 1em;
 }
 .Nav__item {
     border:1px solid blue;

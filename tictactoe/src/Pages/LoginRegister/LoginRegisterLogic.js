@@ -28,7 +28,7 @@ const LoginRegisterLogic = () => {
     }
     const login =async()=> {
         try{
-            await signInWithEmailAndPassword(auth,loginPass,loginEmail);
+            await signInWithEmailAndPassword(auth,loginEmail,loginPass);
             navigate("/gamehome/");
         } catch(error){
             console.log(error.message);
@@ -39,7 +39,7 @@ const LoginRegisterLogic = () => {
     }
     const register=async()=> {
         try {
-            await createUserWithEmailAndPassword (auth,loginPass,loginEmail);
+            await createUserWithEmailAndPassword (auth,loginEmail,loginPass);
             setToggle(prev=>!prev)
         navigate("/")
     } catch(error){

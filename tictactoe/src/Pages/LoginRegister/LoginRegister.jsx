@@ -31,9 +31,9 @@ const LoginRegister = () => {
                     </div>
                     <div className={`register-forms${toggle ? "-t":""}`}>
                         <p className="form__heading">Register</p>
-                        <input type="text" className="inputs" placeholder="Name"/>
+                        <input type="text" onChange={setEmail} className="inputs" placeholder="Name" required/>
                 
-                        <input type="password" className="inputs" placeholder="Password"/>
+                        <input type="password" onChange={setPass} className="inputs" placeholder="Password" required/>
                         <button onClick={register} className="submit-btn">Sign Up</button>
                         <p className="no-padding">Already have an account? Login</p>
                 
