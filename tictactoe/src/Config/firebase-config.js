@@ -2,20 +2,26 @@ import React from 'react'
 import {initializeApp} from 'firebase/app'
 import { getAuth } from '@firebase/auth'
 
-
+const { REACT_APP_FIREBASE_API_KEY,
+     REACT_APP_FIREBASE_DOMAIN,           
+     REACT_APP_FIREBASE_ID,
+     REACT_APP_FIREBASE_BUCKET,
+     REACT_APP_FIREBASE_PROJECTID,
+     REACT_APP_FIREBASE_SENDERID}=process.env
 const firebaseConfig  = {
+     
 
-            apiKey: "AIzaSyA9cUY55jFYHvaosfiuLItAs1Hei9naZTA",
+            apiKey: REACT_APP_FIREBASE_API_KEY,
           
-            authDomain: "tictactoe-efbd9.firebaseapp.com",
+            authDomain: REACT_APP_FIREBASE_DOMAIN,
           
-            projectId: "tictactoe-efbd9",
+            projectId: REACT_APP_FIREBASE_PROJECTID,
           
-            storageBucket: "tictactoe-efbd9.appspot.com",
+            storageBucket: REACT_APP_FIREBASE_BUCKET,
           
-            messagingSenderId: "36422766789",
+            messagingSenderId: REACT_APP_FIREBASE_SENDERID,
           
-            appId: "1:36422766789:web:ab8b4f9a9849b5c3b560ac"
+            appId: REACT_APP_FIREBASE_ID
           
      } 
 const app=initializeApp(firebaseConfig)  

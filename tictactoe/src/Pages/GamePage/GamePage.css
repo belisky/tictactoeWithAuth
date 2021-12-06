@@ -49,11 +49,10 @@
 
 }
 .options__list {
-    display:flex;
-  
+    display:flex;  
     width:100%;
     cursor:pointer;
-    padding:1em 3em;
+    padding:1em 2em;
 
 }
 .options__menu > * + *{
