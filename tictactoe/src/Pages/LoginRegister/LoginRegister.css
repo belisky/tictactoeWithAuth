@@ -5,11 +5,29 @@
 }
 
 .register-page {
+    padding:0;
+    margin:0;
     height:100vh;
     display:flex;
+    flex-direction: column;
     align-items:center; 
     justify-content: center;
     width:100vw;
+}
+.container {
+    width:90%;
+    margin:0 auto;
+}
+
+.hero {
+    margin-bottom:1em;
+    margin-top:0;
+    padding-top:0;
+     
+}
+
+.hero > * + * {
+    margin-top: 1em;
 }
 
 .card {

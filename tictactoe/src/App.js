@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="board">
      <Routes>
-       <Route path="/" element={<LoginRegister />}/>
+       <Route exact path="/" element={<LoginRegister />}/>
        <Route path="/gamehome/" element={<GameHome/>}/>
        <Route path="/gamepage/" element={<GamePage/>}/>      
       </Routes>
